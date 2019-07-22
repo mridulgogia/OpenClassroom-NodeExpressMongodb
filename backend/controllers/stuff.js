@@ -52,7 +52,8 @@ exports.deleteThing = (req, res) => {
       res.status(201).json({
         message: "Post saved successfully",
       });
-    }).catch( (error) => {
+    })
+    .catch( (error) => {
       console.log("Not created.... failed...");
       res.status(404).json({
         message: "not created",
