@@ -34,7 +34,7 @@ app.use((req, res, next) => {
 
 // mongodb connect: mongodb+srv://mridulgogia:<password>@cluster0-vubuv.mongodb.net/test?retryWrites=true&w=majority
 
-mongoose.connect('mongodb+srv://mridulgogia:abcd1234@cluster0-vubuv.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true })
+mongoose.connect('mongodb+srv://mridulgogia:abcd1234@cluster0-vubuv.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true , useCreateIndex: true})
 .then(() => {
   console.log('Mongodb Atlas connected successfully');
 })
@@ -42,7 +42,6 @@ mongoose.connect('mongodb+srv://mridulgogia:abcd1234@cluster0-vubuv.mongodb.net/
   console.log('Unable to connect to Mongodb Atlas!');
   console.log(error);
 });
-mongoose.set('useCreateIndex', true);
 app.use(bodyParser.json());
 
 // app.post('/api/stuff', (req, res, next) => {
